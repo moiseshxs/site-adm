@@ -1,15 +1,33 @@
+/*LOGIN*/
 .background {
     background-image: url('/assets/img/fundo.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
 }
-
-.botao{
-    border: 1px solid black;
-}
-.botao:hover {
+.botao {
     background-color: red;
+    color: white;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    width: 200px;
+}
+
+.botao:hover {
+    background-color: green;
     color: white;
 }
 
+.input {
+    border:  1px 1 px 1px 1px solid rgba(71, 70, 70, 0.562);
+    border-radius: 25px;
+}
+
+.borda {
+    border-bottom: 3px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+/*DASHBOARD*/
