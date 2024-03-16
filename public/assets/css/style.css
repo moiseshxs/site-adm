@@ -1,0 +1,15 @@
+.background {
+    background-image: url('/assets/img/fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.botao{
+    border: 1px solid black;
+}
+.botao:hover {
+    background-color: red;
+    color: white;
+}
+
