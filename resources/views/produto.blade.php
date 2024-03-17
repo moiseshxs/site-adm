@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <title>Dashboard - Admin</title>
+    <title>Produtos - Admin</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -19,7 +19,7 @@
         <x-sidebar />
 
         <div class="main">
-        <x-nav />
+            <x-nav />
 
             <main class="content px-3 py-4">
                 <div class="container-fluid">
@@ -43,38 +43,8 @@
                             <div class="col-12 col-md-4 bg-danger">
                                 a
                             </div>
-                            <div class="col-12 col-md-4 mt-2">
-                                <h3 class="fw-bold fs-4 mb-3">Placar de lideres</h3>
-                                <table class="table table-striped shadow border">
-                                    <thead>
-                                        <tr class="highlight">
-                                            <th scope="col">#</th>
-                                            <th scope="col">@username</th>
-                                            <th scope="col">Nivel</th>
-                                            <th scope="col">Pontos</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Miojxo</td>
-                                            <td>77</td>
-                                            <td>236.123</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>TraitorUchida</td>
-                                            <td>34</td>
-                                            <td>124.125</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>CapetaoGamer</td>
-                                            <td>99</td>
-                                            <td>87.123</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="col-12 col-md-4 bg-primary">
+                                a
                             </div>
                         </div>
                     </div>
