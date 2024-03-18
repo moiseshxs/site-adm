@@ -28,7 +28,7 @@
                         <h3 class="fw-bold fs-4 mb-3">Registrar produto</h3>
                         <div class="row">
                             <div class="col-12 col-md-12 fundo shadow-sm rounded-3">
-                                <form method="POST" action="/registrarCliente" enctype="multipart/form-data" class="needs-validation" novalidate>
+                                <form method="POST" action="{{ route('registrar_cliente') }}" enctype="multipart/form-data" class="needs-validation" novalidate>
                                     @csrf
                                     <div class="row">
                                         <div class="col-12 col-md-2 py-5">
@@ -54,19 +54,19 @@
                                                 <div class="col-12 col-md-6 my-3">
                                                     <div class="mb-3">
                                                         <label for="nome" class="form-label">Nome</label>
-                                                        <input type="text" class="form-control shadow bg-secondary bg-opacity-10" id="nome" placeholder="nome">
+                                                        <input type="text" class="form-control shadow bg-secondary bg-opacity-10" id="nome" name="nome" placeholder="nome">
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-3 my-3">
                                                     <div class="mb-3">
                                                         <label for="nasc" class="form-label">Data de nascimento</label>
-                                                        <input type="date" class="form-control shadow bg-secondary bg-opacity-10" id="nasc" placeholder="">
+                                                        <input type="date" class="form-control shadow bg-secondary bg-opacity-10" id="nasc" name="nasc" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-3 my-3">
                                                     <div class="mb-3">
                                                         <label for="telefone" class="form-label">Celular</label>
-                                                        <input type="text" class="form-control shadow bg-secondary bg-opacity-10" id="telefone" placeholder="11900000000">
+                                                        <input type="text" class="form-control shadow bg-secondary bg-opacity-10" id="telefone" name="telefone" placeholder="11900000000">
                                                     </div>
                                                 </div>
                                             </div>
@@ -74,19 +74,19 @@
                                                 <div class="col-12 col-md-3 my-3">
                                                     <div class="mb-3">
                                                         <label for="username" class="form-label">Username</label>
-                                                        <input type="text" class="form-control shadow bg-secondary bg-opacity-10" id="username" placeholder="@username">
+                                                        <input type="text" class="form-control shadow bg-secondary bg-opacity-10" id="username" name="username" placeholder="@username">
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-3 my-3">
                                                     <div class="mb-3">
                                                         <label for="senha" class="form-label">Senha</label>
-                                                        <input type="password" class="form-control shadow bg-secondary bg-opacity-10" id="senha" placeholder="senha">
+                                                        <input type="password" class="form-control shadow bg-secondary bg-opacity-10" id="senha" name="senha" placeholder="senha">
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-6 my-3">
                                                     <div class="mb-3">
                                                         <label for="email" class="form-label">Email</label>
-                                                        <input type="email" class="form-control shadow bg-secondary bg-opacity-10 text-break" id="email" placeholder="exemplo@email.com">
+                                                        <input type="email" class="form-control shadow bg-secondary bg-opacity-10 text-break" id="email" name="email" placeholder="exemplo@email.com">
                                                     </div>
                                                 </div>
                                             </div>

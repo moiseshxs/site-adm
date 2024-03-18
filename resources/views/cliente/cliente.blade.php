@@ -78,8 +78,8 @@
                                         <table class="table table-striped table-hover shadow border">
                                             <thead>
                                                 <tr class="highlight">
-                                                    <th class="col-md-4 text-center">Nome</th>
-                                                    <th class="col-md-1 text-center">Username</th>
+                                                    <th class="col-md-3 text-center">Nome</th>
+                                                    <th class="col-md-2 text-center">Username</th>
                                                     <th class="col-md-2 text-center">Email</th>
                                                     <th class="col-md-2 text-center">Nasc</th>
                                                     <th class="col-md-1 text-center">ID</th>
@@ -87,17 +87,17 @@
                                                     <th class="col-md-1 text-center">Excluir</th>
                                                 </tr>
                                             </thead>
-
+                                            @foreach ($clientes as $cliente)
                                             <tbody>
                                                 <track>
                                                 <th scope="row" class="text-center">
                                                     <!--<img src="assets/img/fundo.jpg" class="avatar rounded-circle img-fluid me-3" alt="">-->
-                                                    Moises Henry
+                                                    {{$cliente->nome}}
                                                 </th>
-                                                <td class="text-center">@moiseshxs</td>
-                                                <td class="text-center">moises@gmail.com</td>
-                                                <td class="text-center">07/11/2005</td>
-                                                <td class="text-center">1</td>
+                                                <td class="text-center">{{$cliente->username}}</td>
+                                                <td class="text-center">{{$cliente->email}}</td>
+                                                <td class="text-center">{{$cliente->nasc}}</td>
+                                                <td class="text-center">{{$cliente->id}}</td>
                                                 <td class="text-center">
                                                     <form action="process.php" method="POST">
                                                         <input type="hidden" class="form-control" id="acao" name="acao" value="SELECTID">
@@ -114,6 +114,7 @@
                                                 </td>
                                                 </track>
                                             </tbody>
+                                            @endforeach
                                         </table>
                                     </div>
                                 </div>
