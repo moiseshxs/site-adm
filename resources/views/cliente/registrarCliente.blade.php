@@ -28,13 +28,16 @@
                         <h3 class="fw-bold fs-4 mb-3">Registrar produto</h3>
                         <div class="row">
                             <div class="col-12 col-md-12 fundo shadow-sm rounded-3">
-                                <form method="POST" action="{{ route('registrar_cliente') }}" enctype="multipart/form-data" class="needs-validation" novalidate>
+                                <form method="POST" action="{{ isset($cliente) ? route('update_cliente', $cliente->id) : route('registrar_cliente') }}" enctype="multipart/form-data" class="needs-validation" novalidate>
                                     @csrf
+                                    @if(isset($cliente))
+                                    @method('PUT')
+                                    @endif
                                     <div class="row">
                                         <div class="col-12 col-md-2 py-5">
                                             <div class="row">
                                                 <div class="col-12 col-md-12 mb-3">
-                                                    <img src="assets/img/fundo.jpg" class="rounded-2 border border-2 img-fluid shadow" style="height: 200px; object-fit:cover;" alt="">
+                                                    <img src="{{ isset($cliente) ? $cliente->foto : 'assets/img/fundo.jpg' }}" class="rounded-2 border border-2 img-fluid shadow" style="height: 200px; object-fit:cover;" alt="" value="">
                                                 </div>
                                             </div>
 
@@ -54,19 +57,19 @@
                                                 <div class="col-12 col-md-6 my-3">
                                                     <div class="mb-3">
                                                         <label for="nome" class="form-label">Nome</label>
-                                                        <input type="text" class="form-control shadow bg-secondary bg-opacity-10" id="nome" name="nome" placeholder="nome">
+                                                        <input type="text" class="form-control shadow bg-secondary bg-opacity-10" id="nome" name="nome" placeholder="nome" value="{{ isset($cliente) ? $cliente->nome : '' }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-3 my-3">
                                                     <div class="mb-3">
                                                         <label for="nasc" class="form-label">Data de nascimento</label>
-                                                        <input type="date" class="form-control shadow bg-secondary bg-opacity-10" id="nasc" name="nasc" placeholder="">
+                                                        <input type="date" class="form-control shadow bg-secondary bg-opacity-10" id="nasc" name="nasc" placeholder="" value="{{ isset($cliente) ? $cliente->nasc : '' }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-3 my-3">
                                                     <div class="mb-3">
                                                         <label for="telefone" class="form-label">Celular</label>
-                                                        <input type="text" class="form-control shadow bg-secondary bg-opacity-10" id="telefone" name="telefone" placeholder="11900000000">
+                                                        <input type="text" class="form-control shadow bg-secondary bg-opacity-10" id="telefone" name="telefone" placeholder="11900000000" value="{{ isset($cliente) ? $cliente->telefone : '' }}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -74,31 +77,31 @@
                                                 <div class="col-12 col-md-3 my-3">
                                                     <div class="mb-3">
                                                         <label for="username" class="form-label">Username</label>
-                                                        <input type="text" class="form-control shadow bg-secondary bg-opacity-10" id="username" name="username" placeholder="@username">
+                                                        <input type="text" class="form-control shadow bg-secondary bg-opacity-10" id="username" name="username" placeholder="@username" value="{{ isset($cliente) ? $cliente->username : '' }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-3 my-3">
                                                     <div class="mb-3">
                                                         <label for="senha" class="form-label">Senha</label>
-                                                        <input type="password" class="form-control shadow bg-secondary bg-opacity-10" id="senha" name="senha" placeholder="senha">
+                                                        <input type="password" class="form-control shadow bg-secondary bg-opacity-10" id="senha" name="senha" placeholder="senha" value="{{ isset($cliente) ? $cliente->senha : '' }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-6 my-3">
                                                     <div class="mb-3">
                                                         <label for="email" class="form-label">Email</label>
-                                                        <input type="email" class="form-control shadow bg-secondary bg-opacity-10 text-break" id="email" name="email" placeholder="exemplo@email.com">
+                                                        <input type="email" class="form-control shadow bg-secondary bg-opacity-10 text-break" id="email" name="email" placeholder="exemplo@email.com" value="{{ isset($cliente) ? $cliente->email : '' }}">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-12 col-md-2 mt-5">
-                                                    <input type="hidden" class="form-control shadow bg-secondary bg-opacity-10 text-break" name="id" id="id" placeholder="id" value="ID">
+                                                    <input type="text" class="form-control shadow bg-secondary bg-opacity-10 text-break" name="id" id="id" placeholder="id" value="{{ isset($cliente) ? $cliente->id : '' }}">
                                                 </div>
                                                 <div class="col-12 col-md-2 mt-5">
-                                                    <input type="hidden" class="form-control shadow bg-secondary bg-opacity-10 text-break" name="nomeFoto" id="nomeFoto" placeholder="nome foto" value="FOTO">
+                                                    <input type="text" class="form-control shadow bg-secondary bg-opacity-10 text-break" name="nomeFoto" id="nomeFoto" placeholder="nome foto" value="{{ isset($cliente) ? $cliente->foto : '' }}">
                                                 </div>
                                                 <div class="col-12 col-md-2 mt-5">
-                                                    <input type="hidden" class="form-control shadow bg-secondary bg-opacity-10 text-break" name="acao" value="ATUALIZAR ou SALVAR">
+                                                    <input type="text" class="form-control shadow bg-secondary bg-opacity-10 text-break" name="acao" value="ATUALIZAR ou SALVAR">
                                                 </div>
                                                 <div class="col-12 col-md-6 mt-5 text-end">
                                                     <a class="btn btn-primary px-3 me-3" role="button" aria-disabled="true" href="/cliente">Voltar</i></a>

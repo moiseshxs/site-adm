@@ -37,4 +37,10 @@ class ClienteController extends Controller
         $clientes = Cliente::all();
         return view('cliente.cliente', ['clientes' => $clientes]);
     }
+
+    public function showById($id)
+    {
+        $cliente = Cliente::findOrFail($id);
+        return view('cliente.registrarCliente', ['cliente' => $cliente]);
+    }
 }

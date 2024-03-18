@@ -29,3 +29,4 @@ Route::get('/cliente', function () {
 Route::get('/registrarCliente', [ClienteController::class, 'create']);
 Route::post('/registrarCliente', [ClienteController::class, 'store'])->name('registrar_cliente');
 Route::get('/cliente', [ClienteController::class, 'show']);
+Route::get('/registrarCliente/{id}', [ClienteController::class, 'showById'])->name('update_cliente');

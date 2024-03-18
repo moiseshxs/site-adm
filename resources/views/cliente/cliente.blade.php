@@ -99,11 +99,14 @@
                                                 <td class="text-center">{{$cliente->nasc}}</td>
                                                 <td class="text-center">{{$cliente->id}}</td>
                                                 <td class="text-center">
-                                                    <form action="process.php" method="POST">
+                                                    <form action="/registrarCliente/{{$cliente->id}}" method="GET">
+                                                        @csrf
                                                         <input type="hidden" class="form-control" id="acao" name="acao" value="SELECTID">
-                                                        <input type="hidden" class="form-control" id="id" name="id" value="id">
-                                                        <button type="submit" class="dropdown-item">
-                                                            <i class="lni lni-trash-can"></i>
+                                                        <input type="hidden" class="form-control" id="id" name="id" value="{{$cliente->id}}">
+                                                        <button type="submit" class="dropdown-item">  
+                                                                
+                                                                   <i class="lni lni-pencil"><a href="/registrarCliente/{$id}"></a></i>
+                                                                
                                                         </button>
                                                     </form>
                                                 </td>
