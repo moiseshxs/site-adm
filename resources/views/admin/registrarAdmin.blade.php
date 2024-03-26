@@ -24,10 +24,13 @@
             <main class="content px-3 py-4">
                 <div class="container-fluid">
                     <div class="mb-3">
-                        <h3 class="fw-bold fs-4 mb-3">Registrar produto</h3>
+                        <h3 class="fw-bold fs-4 mb-3">Registrar Adm</h3>
                         <div class="row">
                             <div class="col-12 col-md-12 fundo shadow-sm rounded-3">
-                                <form method="post" action="process.php" enctype="multipart/form-data" class="needs-validation" novalidate>
+                                <form method="post" action="{{ route('registrar_adm') }}" enctype="multipart/form-data" class="needs-validation" novalidate>
+                                    @csrf
+
+
                                     <div class="row">
                                         <div class="col-12 col-md-2 py-5">
                                             <div class="row">
@@ -51,47 +54,17 @@
                                             <div class="row">
                                                 <div class="col-12 col-md-6 my-3">
                                                     <div class="mb-3">
-                                                        <label for="produto" class="form-label">Nome</label>
-                                                        <input type="text" class="form-control shadow bg-secondary bg-opacity-10" id="produto" placeholder="nome">
+                                                        <label for="produto" class="form-label">Email</label>
+                                                        <input type="email" class="form-control shadow bg-secondary bg-opacity-10" id="produto" name="email" placeholder="email">
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-3 my-3">
                                                     <div class="mb-3">
-                                                        <label for="preco" class="form-label">Preço</label>
-                                                        <input type="text" class="form-control shadow bg-secondary bg-opacity-10" id="preco" placeholder="R$ 00,99">
+                                                        <label for="preco" class="form-label">Senha</label>
+                                                        <input type="password" class="form-control shadow bg-secondary bg-opacity-10" id="preco" name="senha" placeholder="senha">
                                                     </div>
                                                 </div>
-                                                <div class="col-12 col-md-3 my-3">
-                                                    <div class="mb-3">
-                                                        <label for="produto" class="form-label">Quantidade</label>
-                                                        <input type="text" class="form-control shadow bg-secondary bg-opacity-10" id="produto" placeholder="77">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-12 col-md-3 my-3">
-                                                    <div class="mb-3">
-                                                        <label for="categoria" class="form-label">Categoria</label>
-                                                        <select class="form-select shadow bg-secondary bg-opacity-10" aria-label="Default select example" id="categoria">
-                                                            <option selected>Selecionar categoria</option>
-                                                            <option value="1">Chapéu</option>
-                                                            <option value="2">Tênis</option>
-                                                            <option value="3">Roupa</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 col-md-3 my-3">
-                                                    <div class="mb-3">
-                                                        <label for="preco" class="form-label">Preço</label>
-                                                        <input type="text" class="form-control shadow bg-secondary bg-opacity-10" id="preco" placeholder="R$ 00,99">
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 col-md-6 my-3">
-                                                    <div class="mb-3">
-                                                        <label for="descricao" class="form-label">Descrição</label>
-                                                        <input type="text" class="form-control shadow bg-secondary bg-opacity-10 text-break" id="descricao" placeholder="Descrição">
-                                                    </div>
-                                                </div>
+
                                             </div>
                                             <div class="row">
                                                 <div class="col-12 col-md-2 mt-5">

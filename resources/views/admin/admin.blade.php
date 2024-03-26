@@ -68,7 +68,7 @@
                             <div class="col-12 col-md-12">
                                 <div class="row mb-3">
                                     <div class="col-12 col-md-12 d-flex justify-content-end">
-                                        <a href="/registrarProduto" class="pirula rounded-pill shadow d-flex justify-content-center align-items-center">
+                                        <a href="/registrarAdmin" class="pirula rounded-pill shadow d-flex justify-content-center align-items-center">
                                             Novo
                                         </a>
                                     </div>
@@ -78,42 +78,32 @@
                                         <table class="table table-striped table-hover shadow border">
                                             <thead>
                                                 <tr class="highlight">
-                                                    <th class="col-md-4 text-center">Nome</th>
-                                                    <th class="col-md-2 text-center">Vendas</th>
-                                                    <th class="col-md-1 text-center">Qtd</th>
-                                                    <th class="col-md-2 text-center">Preço</th>
+                                                    <th class="col-md-4 text-center">Email</th>
                                                     <th class="col-md-1 text-center">ID</th>
                                                     <th class="col-md-1 text-center">Alterar</th>
                                                     <th class="col-md-1 text-center">Excluir</th>
                                                 </tr>
                                             </thead>
-
+                                            @foreach ($adms as $adm)
                                             <tbody>
                                                 <track>
                                                 <th scope="row" class="text-center">
-                                                    <img src="assets/img/fundo.jpg" class="avatar rounded-2 img-fluid me-3" alt="">
-                                                    Notebook Positivo
+                                                    {{$adm->email}}
                                                 </th>
-                                                <td class="text-center">24</td>
-                                                <td class="text-center">77</td>
-                                                <td class="text-center">R$23,99</td>
-                                                <td class="text-center">1</td>
+                                                <td class="text-center">{{$adm->id}}</td>
                                                 <td class="text-center">
-                                                    <form action="process.php" method="POST">
-                                                        <input type="hidden" class="form-control" id="acao" name="acao" value="SELECTID">
-                                                        <input type="hidden" class="form-control" id="id" name="id" value="id">
-                                                        <button type="submit" class="dropdown-item">
-                                                            <i class="lni lni-trash-can"></i>
-                                                        </button>
-                                                    </form>
+                                                    <a href="/registrarCliente/{$id}">
+                                                        <i class="lni lni-pencil"></i>
+                                                    </a>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a class="dropdown-item" onclick="modalRemover('idDeletar')">
+                                                    <a class="dropdown-item">
                                                         <i class="lni lni-trash-can"></i>
                                                     </a>
                                                 </td>
                                                 </track>
                                             </tbody>
+                                            @endforeach
                                         </table>
                                     </div>
                                 </div>

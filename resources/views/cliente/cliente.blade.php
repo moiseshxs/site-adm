@@ -24,7 +24,7 @@
             <main class="content px-3 py-4">
                 <div class="container-fluid">
                     <div class="mb-3">
-                        <h3 class="fw-bold fs-4 mb-3">Produtos</h3>
+                        <h3 class="fw-bold fs-4 mb-3">Jogadores</h3>
                         <div class="row d-flex justify-content-evenly mb-4">
                             <div class="col-12 col-md-3 rounded-3 fundo shadow">
                                 <div class="card border-0">
@@ -33,7 +33,7 @@
                                             1800
                                         </h5>
                                         <p class="mb-0 fw-bold text-secondary">
-                                            Total de sócios
+                                            Total de jogadores
                                         </p>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@
                                             312
                                         </h5>
                                         <p class="mb-0 fw-bold text-secondary">
-                                            Novos sócios
+                                            Novos jogadores
                                         </p>
                                     </div>
                                 </div>
@@ -78,10 +78,9 @@
                                         <table class="table table-striped table-hover shadow border">
                                             <thead>
                                                 <tr class="highlight">
-                                                    <th class="col-md-3 text-center">Nome</th>
                                                     <th class="col-md-2 text-center">Username</th>
+                                                    <th class="col-md-1 text-center">Cor</th>
                                                     <th class="col-md-2 text-center">Email</th>
-                                                    <th class="col-md-2 text-center">Nasc</th>
                                                     <th class="col-md-1 text-center">ID</th>
                                                     <th class="col-md-1 text-center">Alterar</th>
                                                     <th class="col-md-1 text-center">Excluir</th>
@@ -91,27 +90,18 @@
                                             <tbody>
                                                 <track>
                                                 <th scope="row" class="text-center">
-                                                    <!--<img src="assets/img/fundo.jpg" class="avatar rounded-circle img-fluid me-3" alt="">-->
-                                                    {{$cliente->nome}}
+                                                    {{$cliente->username}}
                                                 </th>
-                                                <td class="text-center">{{$cliente->username}}</td>
+                                                <td class="text-center">{{$cliente->cor}}</td>
                                                 <td class="text-center">{{$cliente->email}}</td>
-                                                <td class="text-center">{{$cliente->nasc}}</td>
                                                 <td class="text-center">{{$cliente->id}}</td>
                                                 <td class="text-center">
-                                                    <form action="/registrarCliente/{{$cliente->id}}" method="GET">
-                                                        @csrf
-                                                        <input type="hidden" class="form-control" id="acao" name="acao" value="SELECTID">
-                                                        <input type="hidden" class="form-control" id="id" name="id" value="{{$cliente->id}}">
-                                                        <button type="submit" class="dropdown-item">  
-                                                                
-                                                                   <i class="lni lni-pencil"><a href="/registrarCliente/{$id}"></a></i>
-                                                                
-                                                        </button>
-                                                    </form>
+                                                    <a href="/registrarCliente/{$id}">
+                                                        <i class="lni lni-pencil"></i>
+                                                    </a>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a class="dropdown-item" onclick="modalRemover('idDeletar')">
+                                                    <a class="dropdown-item">
                                                         <i class="lni lni-trash-can"></i>
                                                     </a>
                                                 </td>

@@ -3,16 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Hash;
 use App\Models\Cliente;
 
 class ClienteController extends Controller
 {
-    public function count(){
-        $totalCliente = Cliente::count();
 
-        return view('cliente.cliente', ['totalCliente' => $totalCliente]);
-    }
     public function create() 
     {
         return view('cliente.registrarCliente');
@@ -21,12 +17,10 @@ class ClienteController extends Controller
     public function store(Request $request) 
     {
        Cliente::create([
-        'nome'=> $request->nome,
-        'nasc'=> $request->nasc,
-        'telefone'=> $request->telefone,
         'username'=> $request->username,
-        'senha'=> $request->senha,
+        'cor'=> $request->cor,
         'email'=> $request->email,
+        'senha'=> Hash::make($request->senha),
        ]);
 
        return redirect('/cliente');

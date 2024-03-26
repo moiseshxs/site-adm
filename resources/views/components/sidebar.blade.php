@@ -17,24 +17,24 @@
                 <span>Dashboard</span>
             </a>
         </li>
-        <li class="sidebar-item my-3">
+        <!-- <li class="sidebar-item my-3">
             <a href="/partida" class="sidebar-link">
                 <i class="lni lni-calendar"></i>
                 <span>Próximos jogos</span>
             </a>
-        </li>
+        </li>-->
         <li class="sidebar-item my-3">
-            <a href="/produto" class="sidebar-link">
+            <a href="/admin" class="sidebar-link">
                 <i class="lni lni-cart-full"></i>
-                <span>Produtos</span>
+                <span>Admin</span>
             </a>
         </li>
-        <li class="sidebar-item my-3">
+       <!-- <li class="sidebar-item my-3">
             <a href="/elenco" class="sidebar-link">
                 <i class="lni lni-users"></i>
                 <span>Elenco</span>
             </a>
-        </li>
+        </li> -->
         <li class="sidebar-item">
             <a href="/cliente" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
                 <i class="lni lni-user"></i>
