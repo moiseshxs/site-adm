@@ -45,11 +45,11 @@ body {
     color: white;
     transition: background-color 0.3s ease;
     cursor: pointer;
-    background-color: #5722c0d5;
+    background-color: #007AD7;
 }
 
 .pirula:hover {
-    background-color: #401B8C;
+    background-color:#005291;
 }
 
 .arquivo {

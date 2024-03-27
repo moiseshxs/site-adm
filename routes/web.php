@@ -13,6 +13,11 @@ Route::get('/dashboard', function () {
     return view('dashboard/dashboard');
 });
 
+Route::get('/produto', function () {
+    return view('produto/produto');
+});
+
+
 Route::get('/admin', function () {
     return view('admin/admin');
 });
